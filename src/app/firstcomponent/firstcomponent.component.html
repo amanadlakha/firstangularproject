@@ -1,0 +1,16 @@
+<p>First Component works!</p>
+<hr>
+<h4>Lets see Two Way Data Binding</h4>
+<input type="text" (keyup.enter)="enterpressed($event)" >
+<br>
+<p>Text Enter Value is : <b>{{text_entered_value}}</b></p>
+<hr>
+<h4>This is Example of *ngFor</h4>
+<table>
+    <tbody>
+        <tr *ngFor="let record of data">
+            <td>{{record.name}}</td>
+            <td>{{record.points}}</td>
+        </tr>
+    </tbody>
+</table>
