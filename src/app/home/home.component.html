@@ -1,0 +1,10 @@
+<p>home works!</p>
+<label>Type something:
+    <input  [class.foo]="true"  [style.width]="'100px'"  >{{1+2}}
+    <input [class]="['A','B']" [style]="{'font-style': 'normal', 'color':'blue','font-size': '24px'}"  >{{1+2}}
+    <input [class]="{foo:true,bar:false}"  >{{1+2}}
+    <input [class]="test_input"
+      [(ngModel)]="test_input" >{{test_input}}
+    <button (click)="buttonevent($event)" (mouseenter)="buttonevent($event)">Button Click</button>
+
+  </label>

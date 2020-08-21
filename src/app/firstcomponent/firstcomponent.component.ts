@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-firstcomponent',
@@ -7,24 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstcomponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firstservice:UserService) {
+   }
 
   text_entered_value="";
-  data=[
-  {
-    "name":"Aman",
-    "points":50
-  },
-  {
-    "name":"Akshay",
-    "points":90
-  },
+  text_value=""
+  
+  data=[]
 
-  ]
-
+  ngOnChanges(){
+    console.log("Changes occured")
+  }
   ngOnInit(): void {
+  this.data=  this.firstservice.getData()
   }
 
+  removeItem(index){
+    this.data.splice(index,1);
+  }
   enterpressed(event){
   //getting input values
     this.text_entered_value= event.target.value
